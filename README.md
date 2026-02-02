@@ -1,4 +1,4 @@
-# react-flexlayout
+# react-flex-kit
 
 轻量级的 Flexbox 布局组件库，同时支持 React (Web) 和 React Native。
 
@@ -15,16 +15,16 @@
 
 ```bash
 # npm
-npm install react-flexlayout
+npm install react-flex-kit
 
 # yarn
-yarn add react-flexlayout
+yarn add react-flex-kit
 
 # pnpm
-pnpm add react-flexlayout
+pnpm add react-flex-kit
 
 # bun
-bun add react-flexlayout
+bun add react-flex-kit
 ```
 
 ## 基本使用
@@ -32,7 +32,7 @@ bun add react-flexlayout
 ### Web
 
 ```tsx
-import { Row, Col, Flex } from 'react-flexlayout';
+import { Row, Col, Flex } from 'react-flex-kit';
 
 function App() {
   return (
@@ -54,7 +54,7 @@ function App() {
 ### React Native
 
 ```tsx
-import { Row, Col, Flex } from 'react-flexlayout/native';
+import { Row, Col, Flex } from 'react-flex-kit/native';
 
 function App() {
   return (
@@ -157,7 +157,7 @@ type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
 ### Web
 
 ```tsx
-import { createFlexComponents } from 'react-flexlayout';
+import { createFlexComponents } from 'react-flex-kit';
 
 export const { Row, Col, Flex } = createFlexComponents({
   // 自定义 gap 计算函数
@@ -175,7 +175,7 @@ export const { Row, Col, Flex } = createFlexComponents({
 
 ```tsx
 import { scale } from '@flickering/nativewind-scale';
-import { createFlexComponents } from 'react-flexlayout/native';
+import { createFlexComponents } from 'react-flex-kit/native';
 
 export const { Row, Col, Flex } = createFlexComponents({
   // 使用响应式缩放
@@ -241,13 +241,13 @@ import type {
   FlexJustify,
   FlexDirection,
   FlexConfig,
-} from 'react-flexlayout';
+} from 'react-flex-kit';
 
 // React Native
 import type {
   NativeFlexLayoutProps,
   NativeFlexProps,
-} from 'react-flexlayout/native';
+} from 'react-flex-kit/native';
 ```
 
 ## 兼容性

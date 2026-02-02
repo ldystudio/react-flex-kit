@@ -82,9 +82,7 @@ describe("Row", () => {
 
     test("style prop applies when no conflicting component prop", () => {
         // style 中的 padding 不会被组件 props 覆盖
-        const html = renderToString(
-            <Row style={{ padding: "10px" }}>content</Row>
-        );
+        const html = renderToString(<Row style={{ padding: "10px" }}>content</Row>);
         expect(html).toContain("padding:10px");
     });
 

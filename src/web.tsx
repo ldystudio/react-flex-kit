@@ -56,7 +56,7 @@ export interface WebFlexConfig extends Omit<FlexConfig, "gapCalculator"> {
  *
  * @example
  * ```tsx
- * import { createFlexComponents } from 'react-flexlayout';
+ * import { createFlexComponents } from 'react-flex-kit';
  *
  * // Use custom gap calculation
  * export const { Row, Col, Flex } = createFlexComponents({

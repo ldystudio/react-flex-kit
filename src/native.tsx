@@ -57,7 +57,7 @@ const createNativeStyleCache = (gapCalculator: GapCalculator, maxSize = 100) => 
  * @example
  * ```tsx
  * import { scale } from '@flickering/nativewind-scale';
- * import { createFlexComponents } from 'react-flexlayout/native';
+ * import { createFlexComponents } from 'react-flex-kit/native';
  *
  * // Use nativewind-scale for responsive gap
  * export const { Row, Col, Flex } = createFlexComponents({
@@ -91,14 +91,7 @@ export function createFlexComponents(config: FlexConfig = {}) {
             }: NativeFlexLayoutProps,
             ref: Ref<View>
         ) {
-            const baseStyle = getStyles(
-                reverse ? "row-reverse" : "row",
-                fullWidth,
-                fullHeight,
-                align,
-                justify,
-                space
-            );
+            const baseStyle = getStyles(reverse ? "row-reverse" : "row", fullWidth, fullHeight, align, justify, space);
 
             return (
                 <View ref={ref} style={style ? [style, baseStyle] : baseStyle} {...rest}>
