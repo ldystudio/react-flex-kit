@@ -40,7 +40,8 @@ const createWebStyleCache = (gapCalculator: (space: number) => string, maxSize =
             cache.set(key, baseStyle);
         }
 
-        return userStyle ? { ...baseStyle, ...userStyle } : baseStyle;
+        // 优先级: 组件 props > 内联 style > className
+        return userStyle ? { ...userStyle, ...baseStyle } : baseStyle;
     };
 };
 

@@ -70,13 +70,22 @@ describe("Row", () => {
         expect(html).toContain('class="custom-class"');
     });
 
-    test("style prop overrides component props", () => {
+    test("component props override style prop", () => {
+        // fullWidth (组件 prop) 优先于 style
         const html = renderToString(
             <Row fullWidth style={{ width: "50%" }}>
                 content
             </Row>
         );
-        expect(html).toContain("width:50%");
+        expect(html).toContain("width:100%");
+    });
+
+    test("style prop applies when no conflicting component prop", () => {
+        // style 中的 padding 不会被组件 props 覆盖
+        const html = renderToString(
+            <Row style={{ padding: "10px" }}>content</Row>
+        );
+        expect(html).toContain("padding:10px");
     });
 
     test("forwards HTML attributes", () => {

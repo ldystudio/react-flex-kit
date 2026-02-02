@@ -186,12 +186,17 @@ export const { Row, Col, Flex } = createFlexComponents({
 
 ## 样式优先级
 
-内联 `style` > 组件 props > `className` (Tailwind)
+组件 props > 内联 `style` > `className` (Tailwind)
 
 ```tsx
-// style 的 width 会覆盖 fullWidth
+// fullWidth 会覆盖 style 的 width
 <Row fullWidth style={{ width: "50%" }}>
-  {/* width: 50% */}
+  {/* width: 100% (fullWidth 优先) */}
+</Row>
+
+// style 中不冲突的属性会保留
+<Row fullWidth style={{ padding: "10px" }}>
+  {/* width: 100%, padding: 10px */}
 </Row>
 
 // 组件 props 生成的内联样式会覆盖 Tailwind 类
