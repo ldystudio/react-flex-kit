@@ -184,6 +184,38 @@ export const { Row, Col, Flex } = createFlexComponents({
 });
 ```
 
+### React Native + NativeWind
+
+配合 NativeWind 使用时，通过 `cssInterop` 启用 `className` 支持：
+
+```tsx
+// components/Flex.tsx
+import { scale } from '@flickering/nativewind-scale';
+import { cssInterop } from 'nativewind';
+import { createFlexComponents } from 'react-flex-kit/native';
+
+const { Row, Col, Flex } = createFlexComponents({
+  gapCalculator: (space) => scale(space),
+  defaultSpace: 8,
+});
+
+for (const component of [Row, Col, Flex]) {
+  cssInterop(component, { className: { target: 'style' } });
+}
+
+export { Row, Col, Flex };
+```
+
+然后就可以直接使用 Tailwind 类名了：
+
+```tsx
+import { Row } from '@/components/Flex';
+
+<Row className="justify-center bg-red-200">
+  <Text>Hello</Text>
+</Row>
+```
+
 ## 样式优先级
 
 组件 props > 内联 `style` > `className` (Tailwind)

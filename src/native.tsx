@@ -94,7 +94,7 @@ export function createFlexComponents(config: FlexConfig = {}) {
             const baseStyle = getStyles(reverse ? "row-reverse" : "row", fullWidth, fullHeight, align, justify, space);
 
             return (
-                <View ref={ref} style={style ? [style, baseStyle] : baseStyle} {...rest}>
+                <View ref={ref} style={style ? [baseStyle, style] : baseStyle} {...rest}>
                     {children}
                 </View>
             );
@@ -126,7 +126,7 @@ export function createFlexComponents(config: FlexConfig = {}) {
             );
 
             return (
-                <View ref={ref} style={style ? [style, baseStyle] : baseStyle} {...rest}>
+                <View ref={ref} style={style ? [baseStyle, style] : baseStyle} {...rest}>
                     {children}
                 </View>
             );
@@ -151,7 +151,7 @@ export function createFlexComponents(config: FlexConfig = {}) {
             const baseStyle = getStyles(direction, fullWidth, fullHeight, align, justify, space);
 
             return (
-                <View ref={ref} style={style ? [style, baseStyle] : baseStyle} {...rest}>
+                <View ref={ref} style={style ? [baseStyle, style] : baseStyle} {...rest}>
                     {children}
                 </View>
             );

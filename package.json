@@ -1,6 +1,6 @@
 {
   "name": "react-flex-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Flexible Row and Col layout components for React and React Native",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -18,7 +18,7 @@
       "require": "./dist/index.native.js"
     }
   },
-  "files": ["dist"],
+  "files": ["dist", "native.js", "native.d.ts"],
   "scripts": {
     "build": "rm -rf dist && rolldown -c && tsc -p tsconfig.build.json",
     "test": "bun test",
